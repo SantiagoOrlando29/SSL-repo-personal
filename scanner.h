@@ -12,7 +12,6 @@ enum tokens{
     CAD
 };
 
-int get_token(char caracter);
-void imprimir_cadena(char* palabra, int* indice);
+int get_token(char* palabra);
 
 #endif // SCANNER_H_INCLUDED

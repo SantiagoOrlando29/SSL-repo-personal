@@ -1,32 +1,22 @@
 #include "scanner.h"
 
 int main(){    
+
     char palabra[100];
-    palabra[0]='\0';
-    int indice = 0;
-
-    char caracter = getchar();
-    int token = get_token(caracter);
     
+    int token = get_token(palabra);
+
     while(token != FDT){
-        if(token == CAD){
-            palabra[indice] = caracter;  
-            indice++;
-        }
- 
+
         if(token == SEP){
-            imprimir_cadena(palabra, &indice);
-            printf("Separador: ,\n");
-        }else if(token == 4){
-            imprimir_cadena(palabra, &indice);
+            printf("Separador: , \n");
+        }else if(token == CAD){
+            printf("Cadena: %s\n", palabra);
         }
 
-        caracter = getchar();
-        token = get_token(caracter);
+        token = get_token(palabra);
     }
 
-    palabra[indice] = '\0';
-    printf("Cadena: %s\n", palabra);
     printf("Fin De Texto: \n");
 
     return 0;
